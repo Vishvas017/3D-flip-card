@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Flip Card</title>
+    <style>
+        body
+        {
+            background-color: rgb(255, 136, 0);
+        }
+        .main
+        {
+            height: 500px;
+            width: 500px;
+            perspective: 1000px;
+            transform: translate(-50%,-50%);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+        }
+        .container
+        {
+            height: 100%;
+            width: 100%;
+            transform-style: preserve-3d;
+            transition: transform 1s;
+        }
+        .main:hover .container
+        {
+            transform: rotateY(180deg);
+        }
+        .front
+        {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background-color: red;
+            color: white;
+            backface-visibility: hidden;
+            border-radius:20px;
+        }
+        .back
+        {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background-color:blue;
+            color: white;
+            backface-visibility: hidden;
+            border-radius:20px;
+            transform: rotateY(180deg);
+        }
+        .back 
+        {
+            text-align: center;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="container">
+            <div class="front">
+                <img src="img/Narendra-Modi-new.jpg" alt="" height="100%" width="100%" style="border-radius: 20px;">
+            </div>
+            <div class="back">
+                <h1>Narendra Modi</h1>
+                <h1>Age:- 73 Years</h1>
+                <h1>D.O.B:- 17 September 1950</h1>
+                <h1>Prime Minister Of India</h1>
+                <h1>Member Of BJP</h1>
+                <h1>(Bharatiya Janata Party)</h1>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
